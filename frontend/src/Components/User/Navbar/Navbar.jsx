@@ -26,9 +26,12 @@ import logo from "../assets/logo.png";
 const navLinks = [
   { title: "Home", path: "/" },
   { title: "About", path: "/about" },
+  { title: "Ai MediScan", path: "/services/disease-predictor" },
   { title: "Doctors", path: "/doctor" },
+  { title: "Ai Doctor", path: "/services/chatbot" },
   { title: "Services", path: "/services" },
-  { title: "Ambulance", path: "/ambulance-booking" },
+  // { title: "Ambulance", path: "/ambulance-booking" },
+
   { title: "Contact", path: "/contact" },
 ];
 
@@ -117,7 +120,17 @@ const Navbar = () => {
                         },
                       }}
                     >
-                      <ListItemText primary={link.title} sx={{ fontWeight: 500 }} />
+                      {/* <ListItemText primary={link.title} sx={{ fontWeight: 500 }} /> */}
+                      <ListItemText
+  primary={link.title}
+  primaryTypographyProps={{
+    noWrap: true,
+    sx: {
+      fontWeight: 500,
+      whiteSpace: "nowrap",
+    },
+  }}
+/>
                     </ListItemButton>
                   </ListItem>
                 ))}

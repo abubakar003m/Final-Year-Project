@@ -21,21 +21,29 @@ const servicesList = [
     path: "/services/chatbot",
   },
   {
-    title: "Disease Predictor",
+    title: "AI Health Report Analyzer",
     description:
-      "Enter symptoms and let AI analyze them to predict possible diseases.",
+      "AI assistant designed to explain medical reports and guide next steps",
     image:
       "https://cdn-icons-png.flaticon.com/512/2966/2966485.png",
     path: "/services/disease-predictor",
   },
-  {
-    title: "Heart Disease Risk",
+    {
+    title: "Book Appoinment",
     description:
-      "AI model that calculates your heart disease risk using medical metrics.",
+      "Book an appointment with a doctor for expert guidance and follow-up care.",
     image:
       "https://cdn-icons-png.flaticon.com/512/1484/1484822.png",
-    path: "/services/heart-risk",
+    path: "/doctor",
   },
+  // {
+  //   title: "Heart Disease Risk",
+  //   description:
+  //     "AI model that calculates your heart disease risk using medical metrics.",
+  //   image:
+  //     "https://cdn-icons-png.flaticon.com/512/1484/1484822.png",
+  //   path: "/services/heart-risk",
+  // },
 ];
 
 const OurServicesPage = () => {
@@ -53,7 +61,7 @@ const OurServicesPage = () => {
           Our AI Healthcare Services
         </Typography>
 
-        <Grid container spacing={4} sx={{ mt: 3 }}>
+        <Grid container spacing={4} sx={{ mt: 3 }} justifyContent="center" >
           {servicesList.map((service, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <Card

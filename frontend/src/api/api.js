@@ -1,0 +1,82 @@
+export const API_BASE_URL = "http://127.0.0.1:8000";
+
+// -----------------------------
+// Upload PDF Report
+// -----------------------------
+
+export const uploadReport = async (file) => {
+
+  const formData = new FormData();
+  formData.append("file", file);
+
+  console.log("Uploading file:", file.name);
+
+  const res = await fetch(`${API_BASE_URL}/api/upload`, {
+    method: "POST",
+    body: formData
+  });
+
+  if (!res.ok) {
+    throw new Error("File upload failed");
+  }
+
+  return res.json();
+};
+
+// -----------------------------
+// Analyze Uploaded Report
+// -----------------------------
+
+export const analyzeReportAPI = async (reportId) => {
+
+  console.log("Analyzing report with ID:", reportId);
+
+  const res = await fetch(`${API_BASE_URL}/api/analyze/${reportId}`, {
+    method: "POST"
+  });
+
+  if (!res.ok) {
+    throw new Error("Analysis failed");
+  }
+
+  return res.json();
+};
+
+// -----------------------------
+// Ask Question About Report
+// -----------------------------
+
+export const askQuestionAPI = async (reportId, question) => {
+
+  const res = await fetch(`${API_BASE_URL}/api/ask`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      report_id: reportId,
+      question: question
+    })
+  });
+
+  if (!res.ok) {
+    throw new Error("Question failed");
+  }
+
+  return res.json();
+};
+
+// -----------------------------
+// Get Report Info
+// -----------------------------
+
+export const getReportAPI = async (reportId) => {
+
+  const res = await fetch(`${API_BASE_URL}/api/report/${reportId}`);
+
+  if (!res.ok) {
+    throw new Error("Report not found");
+  }
+
+  return res.json();
+};

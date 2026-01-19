@@ -1,0 +1,8 @@
+backend-ai = uvicorn main:app --reload
+backend= npm start
+frontend= npm start
+
+for chatbot pip dependencies:
+httpx
+python-dotenv
+

@@ -147,13 +147,13 @@ const Sidebar1 = () => {
               setSelected={setSelected}
             />
 
-            <Item
+            {/* <Item
               title="Ambulance Service"
               to="/ambulance"
               icon={<LocalShippingOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
 
             <Item
               title="Add Doctor"
