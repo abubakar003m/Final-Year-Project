@@ -97,7 +97,7 @@ app = FastAPI(
 allow_origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "https://ai-health-assistant-frontend-gamma.vercel.app",
+    "https://final-year-project-22-arid.vercel.app",
 ]
 
 app.add_middleware(
