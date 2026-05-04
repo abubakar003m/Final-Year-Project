@@ -15,7 +15,7 @@ pillow==10.1.0
 groq==0.4.1
 
 # Vector Store
-faiss-cpu==1.7.4
+faiss-cpu
 numpy==1.26.2
 
 # Data Processing
